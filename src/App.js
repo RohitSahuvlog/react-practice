@@ -14,13 +14,15 @@ import Test from "./components/test";
 import Counter from "./components/Counter";
 import MemoComponent from "./components/UseMemo";
 import CallBackComponent from "./components/UseCallback";
+import { RecoilRoot } from "recoil";
+import TodoList from "./components/recoil/TodoList";
 
 function App() {
   const current = useSelector((state) => state.shop.currentItem);
 
   return (
     <BrowserRouter>
-      <div className="app">
+      {/* <div className="app">
         <Navbar />
         <Routes>
           <Route exact path="/" element={<Products />} />
@@ -31,8 +33,9 @@ function App() {
             <Route exact path="/product/:id" element={<SingleItem />} />
           )}
           <Route exact path="/test" element={<Test />} />
+          <Route exact path="/recoil" element={<Test />} />
         </Routes>
-      </div>
+      </div> */}
 
       {/* <div>
         <h1>useState Example</h1>
@@ -46,6 +49,10 @@ function App() {
         <hr />
 
       </div> */}
+
+      <RecoilRoot>
+        <TodoList />
+      </RecoilRoot>
     </BrowserRouter>
   );
 }

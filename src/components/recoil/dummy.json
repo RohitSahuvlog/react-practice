@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "text": "Learn Recoil",
+        "isComplete": true
+    },
+    {
+        "id": 2,
+        "text": "Build a cool project",
+        "isComplete": false
+    }
+]

@@ -1,5 +1,8 @@
 import React, { useState, useMemo } from 'react';
 
+//useMemo (Think of memoization as caching a value so that it does not need to be recalculated.)
+// The useMemo and useCallback Hooks are similar. The main difference is that useMemo returns a memoized value and useCallback returns a memoized function.
+
 const MemoComponent = () => {
     const [count, setCount] = useState(0);
     const [todos, setTodos] = useState([]);
