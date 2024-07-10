@@ -1,37 +1,36 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
-  Switch,
+  BrowserRouter,
   Route,
-  Redirect,
+  Routes,
 } from "react-router-dom";
 import "./App.css";
-
-import { useDispatch, useSelector } from "react-redux";
-
+import { useSelector } from "react-redux";
 import Navbar from "./components/Navbar/Navbar";
 import Products from "./components/Products/Products";
 import Cart from "./components/Cart/Cart";
 import SingleItem from "./components/SingleItem/SingleItem";
+import Test from "./components/test";
 
 function App() {
   const current = useSelector((state) => state.shop.currentItem);
 
   return (
-    <Router>
+    <BrowserRouter>
       <div className="app">
         <Navbar />
-        <Switch>
-          <Route exact path="/" component={Products} />
-          <Route exact path="/cart" component={Cart} />
+        <Routes>
+          <Route exact path="/" element={<Products />} />
+          <Route exact path="/cart" element={<Cart />} />
           {!current ? (
-            <Redirect to="/" />
+            <Route exact path="*" element={<Products />} />
           ) : (
-            <Route exact path="/product/:id" component={SingleItem} />
+            <Route exact path="/product/:id" element={<SingleItem />} />
           )}
-        </Switch>
+          <Route exact path="/test" element={<Test />} />
+        </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
