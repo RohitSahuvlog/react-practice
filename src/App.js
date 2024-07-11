@@ -16,6 +16,7 @@ import MemoComponent from "./components/UseMemo";
 import CallBackComponent from "./components/UseCallback";
 import { RecoilRoot } from "recoil";
 import TodoList from "./components/recoil/TodoList";
+import UseRefComponent from "./components/useRef";
 
 function App() {
   const current = useSelector((state) => state.shop.currentItem);
@@ -49,10 +50,12 @@ function App() {
         <hr />
 
       </div> */}
+      <UseRefComponent />
 
-      <RecoilRoot>
+
+      {/* <RecoilRoot>
         <TodoList />
-      </RecoilRoot>
+      </RecoilRoot> */}
     </BrowserRouter>
   );
 }

@@ -22,13 +22,16 @@ export default Counter;
 //  points
 // Initialization
 // const [state, setState] = useState(initialState),
+
 // State Variables
 // const [count, setCount] = useState(0),
 
 // State Updater Function
 // setCount(count + 1);
+
 // Functional Updates
 // setCount(prevCount => prevCount + 1);
+
 // Initial State Function
 // const [count, setCount] = useState(() => computeExpensiveInitialState())
 
